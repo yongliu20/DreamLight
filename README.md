@@ -38,7 +38,8 @@ We introduce a model named DreamLight for universal image relighting in this wor
 If you find any bugs due to carelessness on our part in organizing the code, feel free to contact us and point that!
 
 ### Installation
-  Please install the dependencies:
+  Our code is implemented with PyTorch 2.4.1 and CUDA 12.4 by default. 
+  Please install the other dependencies as follows:
   ```
   pip install -r requirements.txt
   ```
