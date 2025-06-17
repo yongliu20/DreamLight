@@ -10,8 +10,8 @@ Yong Liu*, Wenpeng Xiao*, Qianqian Wang, Junlin Chen, Shiyin Wang, Yitong Wang, 
 ---
 ## 📖 Method
 <p align="center">
- <img src="imgs/teaser.png" width="95%">
- <!-- <img src="imgs/result1.png" width="88%"> -->
+ <img src="imgs/teaser.png" width="88%">
+ <img src="imgs/result1.png" width="88%">
 </p>
 
 
