@@ -117,20 +117,6 @@ class FluxTransformerBlock(nn.Module):
         self.norm1 = AdaLayerNormZero(dim)
         self.norm1_context = AdaLayerNormZero(dim)
 
-        # New
-        # self.attn = Attention(
-        #     query_dim=dim,
-        #     cross_attention_dim=None,
-        #     added_kv_proj_dim=dim,
-        #     dim_head=attention_head_dim,
-        #     heads=num_attention_heads,
-        #     out_dim=dim,
-        #     context_pre_only=False,
-        #     bias=True,
-        #     processor=FluxIPAdapterJointAttnProcessor2_0(hidden_size=3072, cross_attention_dim=1024, num_tokens=(16,), scale=0.2),
-        #     qk_norm=qk_norm,
-        #     eps=eps,
-        # )
         self.attn = Attention(
             query_dim=dim,
             cross_attention_dim=None,
@@ -140,7 +126,7 @@ class FluxTransformerBlock(nn.Module):
             out_dim=dim,
             context_pre_only=False,
             bias=True,
-            processor=FluxAttnProcessor2_0(),
+            processor=FluxIPAdapterJointAttnProcessor2_0(hidden_size=3072, cross_attention_dim=1024, num_tokens=(16,), scale=0.1),
             qk_norm=qk_norm,
             eps=eps,
         )
