@@ -161,7 +161,7 @@ class IPAttnProcessor(nn.Module):
 
         self.hidden_size = hidden_size
         self.cross_attention_dim = cross_attention_dim
-        self.scale = nn.Parameter(torch.tensor(1e-8))
+        self.scale = nn.Parameter(torch.tensor(0.1))
         self.num_tokens = num_tokens
 
         self.to_k_ip = nn.Linear(cross_attention_dim or hidden_size, hidden_size, bias=False)
@@ -475,10 +475,10 @@ class IPAttnProcessor2_0(torch.nn.Module):
             #print(self.attn_map.shape)
 
         ip_hidden_states = ip_hidden_states.transpose(1, 2).reshape(batch_size, -1, attn.heads * head_dim)
-        ip_hidden_states = ip_hidden_states.to(query.dtype) * 0
+        ip_hidden_states = ip_hidden_states.to(query.dtype)
 
         # TODO
-        hidden_states = hidden_states + self.scale * ip_hidden_states * attention_mask.to(ip_hidden_states.dtype) * 0
+        hidden_states = hidden_states + self.scale * ip_hidden_states * attention_mask.to(ip_hidden_states.dtype)
 
         # linear proj
         hidden_states = attn.to_out[0](hidden_states)
