@@ -3,7 +3,7 @@ Yong Liu*, Wenpeng Xiao*, Qianqian Wang, Junlin Chen, Shiyin Wang, Yitong Wang, 
 (*equal contribution)
 
 
-<a href='https://arxiv.org/abs/2312.04089'><img src='https://img.shields.io/badge/ArXiv-2312.04089-red'></a> 
+<a href='http://arxiv.org/abs/2506.14549'><img src='https://img.shields.io/badge/ArXiv-2506.14549-red'></a> 
 
 
 
@@ -35,7 +35,7 @@ We introduce a model named DreamLight for universal image relighting in this wor
 <span id="1"></span>
 
 
-If you find any bugs due to carelessness on our part in organizing the code, feel free to contact us and point that!
+We have provided DreamLight based on both FLUX and SD1.5. Genreally, the FLUX version performs better and is recommended. If you find any bugs due to carelessness on our part in organizing the code, feel free to contact us and point that!
 
 ### Installation
   Our code is implemented with PyTorch 2.4.1 and CUDA 12.4 by default. 
@@ -43,7 +43,7 @@ If you find any bugs due to carelessness on our part in organizing the code, fee
   ```
   pip install -r requirements.txt
   ```
-  - Note that we have updated the corresponding code about light adapter in the code of diffusers, thus please utilie the diffusers in this repo to replace the original diffusers.
+  - Note that we have updated the corresponding code about light adapter in the code of diffusers, thus please utilie the diffusers in this repo (in FLUX/ and SD15/) to replace the original diffusers. Note that for FLUX-based DreamLight we use diffusers==0.33.1, and SD1.5-based DreamLight we use diffusers==0.30.3.
 
    
 
@@ -53,16 +53,17 @@ If you find any bugs due to carelessness on our part in organizing the code, fee
 ### Usage
 
 - #### Pretrained Weight
-  We have provided the pretrained model weights and the pretrained CLIP image encoder weights. Please download them from here.
+  We have provided the pretrained model weights and the pretrained CLIP image encoder weights. Please download them from [here](https://huggingface.co/LYAWWH/DreamLight/tree/main).
+  After downloading, please put the model weights in the ckpt/FLUX/ and ckpt/SD15/ folder.
 
 
 
 #### Inference 
-- Please use the following command to perform inference for single or a group of images:
-  ```
-  python test/test.py
-  ```
+- To perform inference for a group of images, you should enter the corresponding folder (FLUX/ or SD15/) and run the test.py.
+
 - Note that you should change the 'xxx/xxx' in test.py to the path of your corresponding path.
+
+- For single image inference, you should set the fg_path, bg_path, save_path, and prompt_path in the corresponding test.py. The prompt is specified by .txt file.
 
 
 
@@ -70,3 +71,11 @@ If you find any bugs due to carelessness on our part in organizing the code, fee
 ### Cite 
 
 If you find our work helpful, we'd appreciate it if you could cite our paper in your work.
+```
+@article{dreamlight,
+  title={DreamLight: Towards Harmonious and Consistent Image Relighting},
+  author={Yong Liu, Wenpeng Xiao, Qianqian Wang, Junlin Chen, Shiyin Wang, Yitong Wang, Xinglong Wu, Yansong Tang},
+  journal={arXiv preprint arXiv:2506.14549},
+  year={2025}
+}
+```
