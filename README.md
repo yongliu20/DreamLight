@@ -63,7 +63,7 @@ We have provided DreamLight based on both FLUX and SD1.5. Genreally, the FLUX ve
 
 - Note that you should change the 'xxx/xxx' in test.py to the path of your corresponding path.
 
-- For single image inference, you should set the fg_path, bg_path, save_path, and prompt_path in the corresponding test.py. The prompt is specified by .txt file.
+- For single image inference, you should set the fg_path, bg_path, save_path, and prompt_path in the corresponding test.py. The prompt is specified by a .txt file.
 
 
 
