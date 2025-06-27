@@ -12,7 +12,7 @@ from diffusers import (
 from dreamlight_utils.pipeline_flux import FluxPipeline
 from PIL import Image
 import numpy as np
-from dreamlight_utils.DreamlightDataFactory.utils.sh_convert import read_envmap, spherical_harmonics_coeffs_v2, generate_spherical_image_v2
+from dreamlight_utils.utils.sh_convert import read_envmap, spherical_harmonics_coeffs_v2, generate_spherical_image_v2
 from transformers import CLIPImageProcessor, CLIPVisionModelWithProjection
 import torch.nn.functional as F
 
