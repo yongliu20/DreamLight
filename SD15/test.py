@@ -20,7 +20,7 @@ from tqdm import tqdm
 import sys
 sys.path.append("SD15/FixDetails")
 from detail_fixer import DetailsFixer
-detail_fixer = DetailsFixer(model_path="FixDetails/vqmodel")
+detail_fixer = DetailsFixer(model_path="xxx/vqmodel")
 
 
 # adapter
